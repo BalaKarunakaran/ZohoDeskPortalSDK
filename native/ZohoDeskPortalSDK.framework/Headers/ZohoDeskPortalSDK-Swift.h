@@ -439,9 +439,18 @@ typedef SWIFT_ENUM(NSInteger, TimeStyle) {
 
 
 
+@interface UINavigationController (SWIFT_EXTENSION(ZohoDeskPortalSDK))
+@property (nonatomic, readonly, strong) UIViewController * _Nullable childViewControllerForStatusBarStyle;
+@end
+
+
 @interface UITextField (SWIFT_EXTENSION(ZohoDeskPortalSDK))
 - (BOOL)canPerformAction:(SEL _Nonnull)action withSender:(id _Nullable)sender SWIFT_WARN_UNUSED_RESULT;
 @end
+
+
+
+
 
 
 
@@ -575,6 +584,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) UIColor * _Nonnull bar
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL translucent;)
 + (BOOL)translucent SWIFT_WARN_UNUSED_RESULT;
 + (void)setTranslucent:(BOOL)newValue;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) UIStatusBarStyle statusBarApperance;)
++ (UIStatusBarStyle)statusBarApperance SWIFT_WARN_UNUSED_RESULT;
++ (void)setStatusBarApperance:(UIStatusBarStyle)newValue;
 @end
 
 
@@ -673,6 +685,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) id <ZohoDeskPortalDele
 @end
 
 
+
+
 @interface ZohoDeskPortalSDK (SWIFT_EXTENSION(ZohoDeskPortalSDK))
 @end
 
@@ -698,14 +712,21 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL enablePoweredByZoho;)
 @end
 
 
-
-
 @interface ZohoDeskPortalSDK (SWIFT_EXTENSION(ZohoDeskPortalSDK))
-+ (void)enablePushNotificationWithDeviceToken:(NSString * _Nonnull)deviceToken;
++ (void)enablePushNotificationWithDeviceToken:(NSString * _Nonnull)deviceToken isTestDevice:(BOOL)isTestDevice mode:(enum APNSMode)mode;
 + (void)processRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo;
 @end
 
 
+
+
+@interface ZohoDeskPortalSDK (SWIFT_EXTENSION(ZohoDeskPortalSDK))
+- (void)setVisitorWithName:(NSString * _Nonnull)name image:(UIImage * _Nullable)image;
++ (void)showLiveChat;
++ (void)setMessageWindowWithColor:(UIColor * _Nonnull)color;
++ (void)setIncomingMessageBackgroundColorWithColor:(UIColor * _Nonnull)color;
++ (void)setOutgoingMessageBackgroundColorWithColor:(UIColor * _Nonnull)color;
+@end
 
 
 @interface ZohoDeskPortalSDK (SWIFT_EXTENSION(ZohoDeskPortalSDK))
@@ -724,15 +745,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL isZDUserSignedI
 + (void)ticketListWithController:(UIViewController * _Nonnull)controller with:(ZDTicketConfiguration * _Nonnull)configuration;
 + (void)addTicketWithController:(UIViewController * _Nonnull)controller with:(ZDTicketConfiguration * _Nonnull)configuration;
 + (void)showHelpPageWithController:(UIViewController * _Nonnull)controller solutionId:(NSString * _Nonnull)solutionId with:(ZDSolutionPageConfiguration * _Nonnull)configuration;
-@end
-
-
-@interface ZohoDeskPortalSDK (SWIFT_EXTENSION(ZohoDeskPortalSDK))
-- (void)setVisitorWithName:(NSString * _Nonnull)name image:(UIImage * _Nullable)image;
-+ (void)showLiveChat;
-+ (void)setMessageWindowWithColor:(UIColor * _Nonnull)color;
-+ (void)setIncomingMessageBackgroundColorWithColor:(UIColor * _Nonnull)color;
-+ (void)setOutgoingMessageBackgroundColorWithColor:(UIColor * _Nonnull)color;
 @end
 
 
