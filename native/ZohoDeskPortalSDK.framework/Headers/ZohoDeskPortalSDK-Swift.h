@@ -685,8 +685,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) id <ZohoDeskPortalDele
 @end
 
 
-
-
 @interface ZohoDeskPortalSDK (SWIFT_EXTENSION(ZohoDeskPortalSDK))
 @end
 
@@ -712,6 +710,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL enablePoweredByZoho;)
 @end
 
 
+
+
 @interface ZohoDeskPortalSDK (SWIFT_EXTENSION(ZohoDeskPortalSDK))
 + (void)enablePushNotificationWithDeviceToken:(NSString * _Nonnull)deviceToken isTestDevice:(BOOL)isTestDevice mode:(enum APNSMode)mode;
 + (void)processRemoteNotificationWithUserInfo:(NSDictionary * _Nonnull)userInfo;
@@ -731,6 +731,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL enablePoweredByZoho;)
 
 @interface ZohoDeskPortalSDK (SWIFT_EXTENSION(ZohoDeskPortalSDK))
 + (void)setWithJwtUserIdentifier:(NSString * _Nonnull)jwtUserIdentifier onComplition:(void (^ _Nonnull)(void))onComplition onError:(void (^ _Nonnull)(NSError * _Nullable))onError;
++ (void)clearAllLocalData;
 + (void)logout;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL isZDUserSignedIn;)
 + (BOOL)isZDUserSignedIn SWIFT_WARN_UNUSED_RESULT;
@@ -740,11 +741,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL isZDUserSignedI
 @interface ZohoDeskPortalSDK (SWIFT_EXTENSION(ZohoDeskPortalSDK))
 + (void)showHomePageWithController:(UIViewController * _Nonnull)controller withConfiguration:(ZDPortalConfiguration * _Nonnull)withConfiguration;
 + (void)showHelpCenterWithController:(UIViewController * _Nonnull)controller with:(ZDHelpCenterConfiguration * _Nonnull)configuration;
++ (void)showArticleListForCategoryId:(NSString * _Nonnull)categoryId controller:(UIViewController * _Nonnull)controller with:(ZDHelpCenterConfiguration * _Nonnull)configuration;
 + (void)showLiveChatWithController:(UIViewController * _Nonnull)controller with:(ZDLiveChatConfiguration * _Nonnull)configuration;
 + (void)showCommunityWithController:(UIViewController * _Nonnull)controller with:(ZDCommunityConfiguration * _Nonnull)configuration;
 + (void)ticketListWithController:(UIViewController * _Nonnull)controller with:(ZDTicketConfiguration * _Nonnull)configuration;
 + (void)addTicketWithController:(UIViewController * _Nonnull)controller with:(ZDTicketConfiguration * _Nonnull)configuration;
-+ (void)showHelpPageWithController:(UIViewController * _Nonnull)controller solutionId:(NSString * _Nonnull)solutionId with:(ZDSolutionPageConfiguration * _Nonnull)configuration;
++ (void)showHelpPageForArticleId:(NSString * _Nonnull)articleId controller:(UIViewController * _Nonnull)controller with:(ZDSolutionPageConfiguration * _Nonnull)configuration;
++ (void)showHelpPageForArticleUrl:(NSURL * _Nonnull)articleLink controller:(UIViewController * _Nonnull)controller with:(ZDSolutionPageConfiguration * _Nonnull)configuration;
 @end
 
 
