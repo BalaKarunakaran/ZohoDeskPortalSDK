@@ -640,6 +640,7 @@ typedef SWIFT_ENUM(NSInteger, ZDDataCenter, closed) {
   ZDDataCenterUS = 0,
   ZDDataCenterCN = 1,
   ZDDataCenterEU = 2,
+  ZDDataCenterIN = 3,
 };
 
 

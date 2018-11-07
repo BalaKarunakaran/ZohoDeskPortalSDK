@@ -233,7 +233,7 @@
 "desk_library_msg_comment_update_failed" = "Bijwerken van de opmerking is mislukt";
 "desk.library.msg_ticket_failed" = "Ophalen van de tickets is mislukt";
 "desk.library.ticket.closed.failed" = "Ticket kon niet gesloten worden";
-"desk.library.ticket.attachments" = "Bijlagen (%s)";
+"desk.library.ticket.attachments" = "Bijlagen (%@)";
 "desk.library.updated.message" = "Laatste update was %s geleden";
 "desk.library.empty_error_message_email" = "Het e-mailveld kan niet leeg zijn";
 "desk.library.community.create_topic" = "Onderwerp maken";
