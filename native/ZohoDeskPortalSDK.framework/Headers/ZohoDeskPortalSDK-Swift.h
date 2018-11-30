@@ -642,6 +642,7 @@ typedef SWIFT_ENUM(NSInteger, ZDDataCenter) {
   ZDDataCenterUS = 0,
   ZDDataCenterCN = 1,
   ZDDataCenterEU = 2,
+  ZDDataCenterIN = 3,
 };
 
 
@@ -876,6 +877,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL isZDUserSignedI
 + (void)showCommunityWithController:(UIViewController * _Nonnull)controller;
 + (void)ticketListWithController:(UIViewController * _Nonnull)controller;
 + (void)addTicketWithController:(UIViewController * _Nonnull)controller;
++ (void)addTicketWithController:(UIViewController * _Nonnull)controller onCompletion:(void (^ _Nonnull)(TicketDetailJsonObject * _Nullable))onCompletion onError:(void (^ _Nonnull)(NSError * _Nullable))onError;
 + (void)showHelpPageForArticleId:(NSString * _Nonnull)articleId controller:(UIViewController * _Nonnull)controller with:(ZDSolutionPageConfiguration * _Nonnull)configuration;
 + (void)showHelpPageForArticleUrl:(NSURL * _Nonnull)articleLink controller:(UIViewController * _Nonnull)controller with:(ZDSolutionPageConfiguration * _Nonnull)configuration;
 @end
